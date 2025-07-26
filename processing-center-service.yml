@@ -3,6 +3,10 @@ app:
   cache:
     ttl-seconds: 600
 
+retry:
+  max-attempts: 3
+  backoff: 100
+
 server:
   port: 8081
 
