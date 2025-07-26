@@ -19,6 +19,12 @@ spring:
     port: 5672
     username: guest
     password: guest
+    rabbitmq:
+      template:
+        exchange: bank.exchange
+      listener:
+        direct:
+          missing-queues-fatal: false
 
   data:
     redis:
