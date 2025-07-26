@@ -1,0 +1,57 @@
+app:
+  schema-name: &schema-name issuing_bank_service
+  cache:
+    ttl-seconds: 600
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8001/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  data:
+    redis:
+      host: redis_cache_payment_system
+      port: 6379
+
+  datasource:
+    url: jdbc:postgresql://postgres_db_payment_system:5432/mydb?currentSchema=issuing_bank_service
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    properties:
+      hibernate:
+        default_schema: *schema-name # Используем якорь
+
+  liquibase:
+    change-log: classpath:/db/changelog/db/changelog-master.xml
+    default-schema: *schema-name
+    liquibase-schema: *schema-name
+    parameters:
+      schemaName: *schema-name # Один параметр для всех миграций
+    contexts: dev # Контекст выполнения
+
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: ${app.cache.ttl-seconds}s
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    configUrl: /v3/api-docs/swagger-config
+    url: /v3/api-docs
+    operationsSorter: alpha
+    tagsSorter: alpha
