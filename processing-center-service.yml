@@ -21,8 +21,11 @@ eureka:
 
 logging:
   level:
-    org.springframework.cloud.openfeign: DEBUG
+    root: INFO
+    org.springframework.web: DEBUG
     feign: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    com.meshakin: DEBUG
 
 spring:
   rabbitmq:
