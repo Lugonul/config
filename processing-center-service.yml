@@ -17,6 +17,11 @@ eureka:
   instance:
     prefer-ip-address: true
 
+logging:
+  level:
+    org.springframework.cloud.openfeign: DEBUG
+    feign: DEBUG
+
 spring:
   rabbitmq:
     host: rabbitmq
