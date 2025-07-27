@@ -28,6 +28,8 @@ logging:
     com.meshakin: DEBUG
 
 spring:
+  main:
+    allow-bean-definition-overriding: true  #удалить.
   rabbitmq:
     host: rabbitmq
     port: 5672
