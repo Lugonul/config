@@ -3,22 +3,39 @@ app:
   cache:
     ttl-seconds: 600
 
-logging:
-  level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql: TRACE
+retry:
+  max-attempts: 3
+  backoff: 100
 
 server:
-  port: 8082
+  port: 8081
 
 eureka:
   client:
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://eureka-server:8001/eureka/
   instance:
     prefer-ip-address: true
 
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    feign: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    com.meshakin: DEBUG
+
 spring:
+  main:
+    allow-bean-definition-overriding: true  #удалить.
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
   data:
     redis:
       host: redis_cache_payment_system
