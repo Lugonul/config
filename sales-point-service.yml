@@ -56,7 +56,6 @@ spring:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-    configUrl: /v3/api-docs/swagger-config
     url: /v3/api-docs
     operationsSorter: alpha
     tagsSorter: alpha
