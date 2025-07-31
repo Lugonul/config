@@ -6,6 +6,14 @@ app:
 server:
   port: 8083
 
+
+logging:
+  level:
+    root: INFO
+    com.meshakin: DEBUG
+  file:
+    name: logs/issuing-bank.log
+
 eureka:
   client:
     service-url:
