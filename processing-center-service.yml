@@ -7,6 +7,18 @@ retry:
   max-attempts: 3
   backoff: 100
 
+otel:
+  traces:
+    exporter: jaeger
+  exporter:
+    jaeger:
+      endpoint: http://localhost:14250
+  service:
+    name: processing-center-service
+  instrumentation:
+    http:
+      enabled: true
+
 server:
   port: 8081
 
