@@ -3,17 +3,17 @@ app:
   cache:
     ttl-seconds: 600
 
-otel:
-  traces:
-    exporter: jaeger
-  exporter:
-    jaeger:
-      endpoint: http://localhost:14250
-  service:
-    name: sales-point-service
-  instrumentation:
-    http:
-      enabled: true
+#otel:
+#  traces:
+#    exporter: jaeger
+#  exporter:
+#    jaeger:
+#      endpoint: http://localhost:14250
+#  service:
+#    name: sales-point-service
+#  instrumentation:
+#    http:
+#      enabled: true
 
 retry:
   max-attempts: 3

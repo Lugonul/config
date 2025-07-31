@@ -7,17 +7,17 @@ retry:
   max-attempts: 3
   backoff: 100
 
-otel:
-  traces:
-    exporter: jaeger
-  exporter:
-    jaeger:
-      endpoint: http://localhost:14250
-  service:
-    name: processing-center-service
-  instrumentation:
-    http:
-      enabled: true
+#otel:
+#  traces:
+#    exporter: jaeger
+#  exporter:
+#    jaeger:
+#      endpoint: http://localhost:14250
+#  service:
+#    name: processing-center-service
+#  instrumentation:
+#    http:
+#      enabled: true
 
 server:
   port: 8081
@@ -34,10 +34,9 @@ eureka:
 logging:
   level:
     root: INFO
-    org.springframework.web: DEBUG
-    feign: DEBUG
-    org.springframework.cloud.openfeign: DEBUG
     com.meshakin: DEBUG
+  file:
+    name: logs/processing-center.log
 
 spring:
   main:
