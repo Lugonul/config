@@ -34,7 +34,7 @@ eureka:
 logging:
   level:
     root: INFO
-    com.meshakin: INFO
+    com.meshakin: DEBUG
   file:
     name: logs/processing-center.log
   pattern:
