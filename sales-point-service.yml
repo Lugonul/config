@@ -15,6 +15,12 @@ app:
 #    http:
 #      enabled: true
 
+keycloak:
+  client-id: processing-center-service
+  client-secret: tu5F3KJECKvEWnREl3RDNvsXX5cmH5W5
+  auth-server-url: http://localhost:8180
+  realm: bank-realm
+
 retry:
   max-attempts: 3
   backoff: 100
