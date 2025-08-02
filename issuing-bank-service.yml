@@ -7,6 +7,12 @@ server:
   port: 8083
 
 
+keycloak:
+  auth-server-url: http://localhost:8180
+  realm: bank-realm
+  client-id: issuing-bank-service
+  client-secret: kLVLbGYiXXFoW6CdDkjWiJXNQtXomCKG
+
 logging:
   level:
     root: INFO

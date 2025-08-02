@@ -17,7 +17,7 @@ app:
 
 keycloak:
   client-id: processing-center-service
-  client-secret: tu5F3KJECKvEWnREl3RDNvsXX5cmH5W5
+  client-secret: E3cVPajHTZbvanKgqtgOTMDHv8nMrz8z
   auth-server-url: http://localhost:8180
   realm: bank-realm
 
@@ -46,8 +46,11 @@ logging:
     com.meshakin: DEBUG
 
 spring:
-  main:
-    allow-bean-definition-overriding: true  #удалить.
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
   rabbitmq:
     host: rabbitmq
     port: 5672
