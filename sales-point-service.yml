@@ -18,7 +18,7 @@ app:
 keycloak:
   client-id: processing-center-service
   client-secret: E3cVPajHTZbvanKgqtgOTMDHv8nMrz8z
-  auth-server-url: http://keycloak:8080
+  auth-server-url: http://keycloak:8180
   realm: bank-realm
 
 retry:
