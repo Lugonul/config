@@ -30,6 +30,11 @@ eureka:
     prefer-ip-address: true
 
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
   rabbitmq:
     host: rabbitmq
     port: 5672
