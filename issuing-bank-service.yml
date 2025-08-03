@@ -11,7 +11,7 @@ keycloak:
   auth-server-url: http://keycloak:8180
   realm: bank-realm
   client-id: issuing-bank-service
-  client-secret: kLVLbGYiXXFoW6CdDkjWiJXNQtXomCKG
+  client-secret: cGzNpRYOXFicWUPtuH2edD2KWKYPHYQq
 
 logging:
   level:

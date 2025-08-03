@@ -16,8 +16,8 @@ app:
 #      enabled: true
 
 keycloak:
-  client-id: processing-center-service
-  client-secret: E3cVPajHTZbvanKgqtgOTMDHv8nMrz8z
+  client-id: sales-point-service
+  client-secret: P00XheepG1IJlFMlrrdYXPUPxyHFnjs2
   auth-server-url: http://keycloak:8180
   realm: bank-realm
 
