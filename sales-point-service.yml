@@ -17,7 +17,7 @@ app:
 
 keycloak:
   client-id: sales-point-service
-  client-secret: fwExpKt0g6O3MDl3ndOwaIc2svGGC2y2
+  client-secret: uCHXoHEXKvo2di5Zsf1yxZisb8tyCtRm
   auth-server-url: http://keycloak:8080
   realm: bank-realm
 
