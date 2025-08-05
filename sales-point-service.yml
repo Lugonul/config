@@ -20,7 +20,7 @@ keycloak:
   client-secret: uCHXoHEXKvo2di5Zsf1yxZisb8tyCtRm
   auth-server-url: http://keycloak:8080
   realm: bank-realm
-  jwks-url: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
+  jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs
 
 retry:
   max-attempts: 3
