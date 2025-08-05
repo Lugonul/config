@@ -18,7 +18,7 @@ app:
 keycloak:
   client-id: sales-point-service
   client-secret: uCHXoHEXKvo2di5Zsf1yxZisb8tyCtRm
-  auth-server-url: https://keycloak:8443
+  auth-server-url: http://keycloak:8443
   realm: bank-realm
 
 retry:
