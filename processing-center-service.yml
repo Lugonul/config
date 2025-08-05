@@ -45,7 +45,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak:8443/realms/bank-realm
+          issuer-uri: http://keycloak:8080/realms/bank-realm
   rabbitmq:
     host: rabbitmq
     port: 5672
