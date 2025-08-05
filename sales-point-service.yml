@@ -20,6 +20,7 @@ keycloak:
   client-secret: uCHXoHEXKvo2di5Zsf1yxZisb8tyCtRm
   auth-server-url: http://keycloak:8080
   realm: bank-realm
+  jwks-url: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
 
 retry:
   max-attempts: 3
@@ -46,11 +47,6 @@ logging:
     com.meshakin: DEBUG
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
   rabbitmq:
     host: rabbitmq
     port: 5672
