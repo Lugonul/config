@@ -8,10 +8,13 @@ server:
 
 
 keycloak:
-  auth-server-url: http://localhost:8080
+  auth-server-url: http://keycloak:8080
   realm: bank-realm
-  client-id: issuing-bank-service
-  client-secret: 0DwgeX7vHpLjEN5VqK22qamQ3Ijf0fD0
+  resource: issuing_bank_service  # Уникальное имя для каждого сервиса
+  credentials:
+    secret: spVbSSMQAZhpwFZHEF6Kq02sp3n22POB
+  bearer-only: true  # Только проверка токенов
+  jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs
 
 logging:
   level:
