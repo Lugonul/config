@@ -7,6 +7,13 @@ retry:
   max-attempts: 3
   backoff: 100
 
+
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: your-realm
+  resource: processing-center-service
+  bearer-only: true
+
 #otel:
 #  traces:
 #    exporter: jaeger
@@ -41,11 +48,6 @@ logging:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/bank-realm
   rabbitmq:
     host: rabbitmq
     port: 5672
