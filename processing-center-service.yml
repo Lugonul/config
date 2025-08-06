@@ -15,6 +15,7 @@ keycloak:
   credentials:
     secret: QdIIM6rxhex4lPiXCyqm1An7cNgftAZq
   bearer-only: true  # Только проверка токенов
+  jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs
 
 #otel:
 #  traces:
