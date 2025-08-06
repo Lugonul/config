@@ -9,10 +9,12 @@ retry:
 
 
 keycloak:
-  auth-server-url: http://localhost:8080/auth
-  realm: your-realm
-  resource: processing-center-service
-  bearer-only: true
+  auth-server-url: http://keycloak:8080
+  realm: bank-realm
+  resource: processing-center-service  # Уникальное имя для каждого сервиса
+  credentials:
+    secret: QdIIM6rxhex4lPiXCyqm1An7cNgftAZq
+  bearer-only: true  # Только проверка токенов
 
 #otel:
 #  traces:
