@@ -19,15 +19,11 @@ keycloak:
 
 management:
   tracing:
-    enabled: true
-    sampling.probability: 1.0
+    sampling:
+      probability: '1.0'
   otlp:
     tracing:
-      endpoint: http://jaeger:4317 # Используем gRPC-эндпоинт
-
-opentelemetry:
-  service:
-    name: processing-center-service
+      endpoint: http://jaeger:4318/v1/traces
 
 server:
   port: 8081
