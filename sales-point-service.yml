@@ -17,7 +17,7 @@ app:
 
 keycloak:
   client-id: sales-point-service
-  client-secret: zHcoY8z6Q3zrmgZO1DjDH7eD3ezCeKkE
+  client-secret: FMiu2da3tsyr5BUq1pKckgzpCTuo7anK
   auth-server-url: http://keycloak:8080
   realm: bank-realm
   jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs

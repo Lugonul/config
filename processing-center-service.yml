@@ -13,7 +13,7 @@ keycloak:
   realm: bank-realm
   resource: processing-center-service  # Уникальное имя для каждого сервиса
   credentials:
-    secret: QdIIM6rxhex4lPiXCyqm1An7cNgftAZq
+    secret: RoO30yCHQh57rQhRf402xGlHhavKjNRi
   bearer-only: true  # Только проверка токенов
   jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs
 
