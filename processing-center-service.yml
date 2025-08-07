@@ -21,21 +21,13 @@ management:
   tracing:
     enabled: true
     sampling.probability: 1.0
-    propagation:
-      type: w3c  # Используем стандарт W3C вместо B3
   otlp:
     tracing:
-      endpoint: http://jaeger:4317
+      endpoint: http://jaeger:4317 # Используем gRPC-эндпоинт
 
 opentelemetry:
   service:
     name: processing-center-service
-  instrumentations:
-    methods:
-      enabled: true
-    annotations:
-      enabled: true
-  propagators: tracecontext  # Явно указываем пропагатор
 
 server:
   port: 8081
@@ -59,10 +51,6 @@ logging:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
 spring:
-  sleuth:
-    propagation:
-      type: w3c  # Для совместимости со Spring Cloud Sleuth
-
   rabbitmq:
     host: rabbitmq
     port: 5672
