@@ -17,17 +17,20 @@ keycloak:
   bearer-only: true  # Только проверка токенов
   jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs
 
-#otel:
-#  traces:
-#    exporter: jaeger
-#  exporter:
-#    jaeger:
-#      endpoint: http://localhost:14250
-#  service:
-#    name: processing-center-service
-#  instrumentation:
-#    http:
-#      enabled: true
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0 # 100% трассировок
+
+opentelemetry:
+  service:
+    name: processing-center-service
+  traces:
+    exporter:
+      type: jaeger
+    jaeger:
+      endpoint: http://localhost:14250
 
 server:
   port: 8081
