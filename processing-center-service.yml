@@ -20,17 +20,11 @@ keycloak:
 management:
   tracing:
     enabled: true
-    sampling:
-      probability: 1.0 # 100% трассировок
+    sampling.probability: 1.0 # 100% трассировок
+  otlp.tracing.endpoint: http://jaeger:4317 # Используем OTLP
 
 opentelemetry:
-  service:
-    name: processing-center-service
-  traces:
-    exporter:
-      type: jaeger
-    jaeger:
-      endpoint: http://jaeger:14250
+  service.name: processing-center-service
 
 server:
   port: 8081
