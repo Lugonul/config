@@ -10,9 +10,9 @@ server:
 keycloak:
   auth-server-url: http://keycloak:8080
   realm: bank-realm
-  resource: issuing_bank_service  # Уникальное имя для каждого сервиса
+  resource: issuing_bank_service
   credentials:
-    secret: XWDynToRPh9lXjJI5FzpTqrRVEdb1sFf
+    secret: Kk7LkiEfyxqK4J63bhsyu7MICfpvYBTg
   bearer-only: true  # Только проверка токенов
   jwks-url: http://keycloak:8080/realms/bank-realm/protocol/openid-connect/certs
 
@@ -63,15 +63,15 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     properties:
       hibernate:
-        default_schema: *schema-name # Используем якорь
+        default_schema: *schema-name
 
   liquibase:
     change-log: classpath:/db/changelog/db/changelog-master.xml
     default-schema: *schema-name
     liquibase-schema: *schema-name
     parameters:
-      schemaName: *schema-name # Один параметр для всех миграций
-    contexts: dev # Контекст выполнения
+      schemaName: *schema-name
+    contexts: dev
 
 
   cache:
