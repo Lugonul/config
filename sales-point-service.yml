@@ -71,15 +71,15 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     properties:
       hibernate:
-        default_schema: *schema-name # Используем якорь
+        default_schema: *schema-name
 
   liquibase:
     change-log: classpath:/db/changelog/db/changelog-master.xml
     default-schema: *schema-name
     liquibase-schema: *schema-name
     parameters:
-      schemaName: *schema-name # Один параметр для всех миграций
-    contexts: dev # Контекст выполнения
+      schemaName: *schema-name
+    contexts: dev
 
 
   cache:
